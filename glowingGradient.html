@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Gradient</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {display: flex;
+            justify-content: center;
+            align-items: center;}
+        .glow {position: relative;
+            width: 300px;
+            height: 5px;
+            background: #fff;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+            rotate: 270deg;}
+        .glow::before {content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #800101, #610545, #5c5a5b, #3a3a3a, #5c2121, #d81919, #b60000, #df4b19, #7a0000);
+            animation: animate 10s linear infinite;
+            background-size: 500%;}
+        .glow::after {content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #940000, #c20000, #fb0094, #b30000, #7c0000, #870303, #bf2929, #7c0909, #7d0000);
+            animation: animate 10s linear infinite;
+            background-size: 500%;
+            filter: blur(50px);}
+        @keyframes animate{0%{background-position: 0 0 ;}0%{background-position: 500% 0;}}
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+</body>
+
+</html>

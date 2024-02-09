@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Bar</title>
+    <link rel="stylesheet" href="multiple.css">
+</head>
+<body>
+    <div class="skill">
+        <!-- <h1>my skill</h1> -->
+        <li><h3>S&P500</h3><span class="bar"><span class="first"></span></span></li>
+        <li><h3>Nasdaq</h3><span class="bar"><span class="Nasdaq"></span></span></li>
+        <li><h3>Dow</h3><span class="bar"><span class="Dow"></span></span></li>
+        <li><h3>Dollar</h3><span class="bar"><span class="Dollar"></span></span></li></div>
+    <script>
+        function updateBar(barClassName, maxPercentage) {
+            const bar = document.querySelector('.' + barClassName);
+            const newWidth = Math.random() * maxPercentage + '%';
+            bar.style.width = newWidth;}
+        function randomizeBars() {
+            updateBar('first', 90); // Assuming you want the first bar to go up to 90%
+            updateBar('Nasdaq', 70); // Nasdaq up to 70%
+            updateBar('Dow', 45); // Dow up to 45%
+            updateBar('Dollar', 60);} // Dollar up to 60%
+        setInterval(randomizeBars, 170);
+    </script>
+    
+</body>
+</html>

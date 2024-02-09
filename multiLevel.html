@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Level</title>
+    <link rel="stylesheet" href="multiLevel.css">
+</head>
+<body>
+    <div class="spinner-container">
+        <div class="spinner spinner1"></div>
+        <div class="spinner spinner2"></div>
+        <div class="spinner spinner3"></div>
+        <div class="spinner spinner4"></div>
+        <div class="spinner spinner5"></div>
+        <div class="spinner spinner6"></div>
+        <div class="spinner spinner7"></div>
+        <div class="spinner spinner8"></div>
+      </div>
+      
+</body>
+<script>document.addEventListener("DOMContentLoaded", function() {
+const spinners = document.querySelectorAll('.spinner');
+
+// Function to update a spinner's animation properties
+function updateSpinner(spinner) {
+    // Randomly choose a new duration between 0.5s and 2s
+    const duration = 0.5 + Math.random() * 1.0;
+    // Randomly choose the direction
+    const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
+
+    // Use CSS variables for dynamic updates
+    spinner.style.setProperty('--duration', `${duration}s`);
+    spinner.style.setProperty('--direction', direction);
+}
+
+// Initialize spinners with custom properties and initial animation
+spinners.forEach(spinner => {
+    spinner.style.animation = 'spin var(--duration, 1s) linear infinite var(--direction, normal)';
+    updateSpinner(spinner); // Set initial values
+
+    // Update each spinner at random intervals
+    setInterval(() => updateSpinner(spinner), 5000 + Math.random() * 5000);
+});
+});
+  
+  </script>
+</html>

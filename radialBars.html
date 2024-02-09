@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radial Bars</title>
+    <link rel="stylesheet" href="radialBars.css">
+    <style>html, body {
+        margin: 0;
+        padding: 50px;
+        overflow: hidden; /* Prevents scrollbars if the content is larger than the viewport */
+    }</style>
+</head>
+<body>
+    <div class="card">
+        <div class="rating">
+            <h2><span class="counter" data-target="90"></span></h2>
+            <div class="block"></div></div></div>
+<script>
+    const rating = document.getElementsByClassName('rating')[0];
+    const counter = document.querySelector('.counter');
+    let currentPercentage = 0; 
+    counter.innerText = currentPercentage;
+    for (var i = 1; i <= 100; i++) {rating.innerHTML += "<div class='block'></div>";}
+    const blocks = document.querySelectorAll('.block');
+    function updateBlocks(percentage) {blocks.forEach((block, index) => {
+            block.style.transform = "rotate(" + 3.6 * index + "deg)";
+            block.style.animationDelay = `${index / 40}s`;
+            if (index <= percentage) {block.style.background = "#0f0";
+                block.style.boxShadow = "0 0 15px #0f0, 0 0 30px #0f0";
+            } else {block.style.background = "#000"; block.style.boxShadow = "none";}});}
+    updateBlocks(currentPercentage);
+    function randomUpdate() {
+        if (Math.random() > 0.5) {if (currentPercentage < 100) currentPercentage++;
+        } else {if (currentPercentage > 0) currentPercentage--;}
+        counter.innerText = currentPercentage; 
+        updateBlocks(currentPercentage);
+        setTimeout(randomUpdate);}
+    randomUpdate(); 
+</script>
+
+
+</body>
+</html>

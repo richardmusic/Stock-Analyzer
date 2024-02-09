@@ -1,0 +1,85 @@
+.spinner-container {
+position: relative;
+width: 150px;
+height: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.spinner {
+    position: absolute;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.1); /* Default border color for all, adjust as needed */
+    border-radius: 50%;
+  }
+  
+
+  .spinner1 {
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    border-width: 4px; /* Custom border width */
+    border-top-color: #c6c6c6; 
+  }
+
+  .spinner2 {
+    width: 50px;
+    height: 50px;
+    animation: spin .8s linear infinite reverse;
+    border-width: 2px; /* Custom border width */
+    border-top-color: #d1d8f5; 
+  }
+  .spinner3 {
+    width: 85px;
+    height: 85px;
+    animation: spin 1.4s linear infinite;
+    border-width: 6px; /* Custom border width */
+    border-top-color: #87bee3; 
+    opacity: 50%;
+  }
+  .spinner4 {
+    width: 100px;
+    height: 100px;
+    animation: spin 1.6s linear infinite reverse;
+    border-top-color: rgb(195, 205, 207); 
+    opacity: .75;
+    border-width: 5px; /* Custom border width */
+  }
+
+.spinner5 {
+width: 110px;
+height: 110px;
+animation: spin 1.2s linear infinite;
+border-top-color: #97cef2; 
+border-width: 1px; /* Custom border width */
+
+}
+.spinner6 {
+width: 105px;
+height: 105px;
+animation: spin 3.2s linear infinite;
+border-top-color: #3498db; 
+border-width: 1px; /* Custom border width */
+
+}
+.spinner7 {
+width: 72px;
+height: 72px;
+animation: spin 2.8s linear infinite;
+border-top-color: #ceeaf1; 
+border-width: 4px; /* Custom border width */
+
+}
+.spinner8 {
+width: 22px;
+height: 22px;
+animation: spin 1.4s linear infinite;
+border-top-color: #ceeaf1; 
+border-width: 5px; /* Custom border width */
+background-color: black;
+
+}
+
+@keyframes spin {0% {transform: rotate(0deg);}
+100% {transform: rotate(360deg);}}
